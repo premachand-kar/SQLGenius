@@ -8,16 +8,16 @@ Non-technical businesses face challenges in accessing and analyzing critical dat
  
 SQLGenius is a Streamlit application designed to help non-technical businesses access and analyze critical data without needing SQL knowledge. The app leverages opensource technologies Groq Cloud for LLM hosting, as well as Agno AI agent framework for  Database Connection, SQL Query generation, as well as SQL Query execution and provides a user-friendly interface to interact with databases.
 
-![image](https://github.com/user-attachments/assets/fa3f9e51-742e-4861-ad56-c032242ea470)
+![image](https://github.com/user-attachments/assets/59b74980-b82f-40ed-afc5-ad8229738c91)
 
-
- 
 ## Features
  
 - **Database Connectivity**: Connect to SQLite, PostgreSQL, or MySQL databases.
 - **Schema Extraction**: Automatically extract and display the database schema.
 - **SQL Generation**: Generate SQL queries based on natural language input.
 - **Query Execution**: Execute SQL queries and display results in a data frame.
+
+![image](https://github.com/user-attachments/assets/fa3f9e51-742e-4861-ad56-c032242ea470)
  
 ## Installation
  
