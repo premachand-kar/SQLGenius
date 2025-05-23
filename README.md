@@ -1,7 +1,4 @@
 # SQLGenius
-hack2future
-
-# SQLGenius
  
 ## Problem Statement:
  
@@ -9,7 +6,7 @@ Non-technical businesses face challenges in accessing and analyzing critical dat
  
 ## Solution:
  
-SQLGenius is a Streamlit application designed to help non-technical businesses access and analyze critical data without needing SQL knowledge. The app leverages Groq API for SQL generation and provides a user-friendly interface to interact with databases.
+SQLGenius is a Streamlit application designed to help non-technical businesses access and analyze critical data without needing SQL knowledge. The app leverages opensource technologies Groq Cloud for LLM hosting, as well as Agno AI agent framework for  Database Connection, SQL Query generation, as well as SQL Query execution and provides a user-friendly interface to interact with databases.
  
 ## Features
  
@@ -84,3 +81,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgements
  
 - Powered by https://www.groq.com/ and https://www.agno.com/.
+ 
