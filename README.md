@@ -84,3 +84,13 @@ This project is licensed under the MIT License. See the LICENSE file for details
  
 - Powered by https://www.groq.com/ and https://www.agno.com/.
  
+## Team Name
+The Quantum Coders
+
+## Team Members
+
+Dheeraj Khobragade 
+Rahul Bhave
+Vaidehi Dilip Choudhari
+Aayush Awari
+Premachand Kar
