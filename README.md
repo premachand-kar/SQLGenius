@@ -89,7 +89,7 @@ The Quantum Coders
 
 ## Team Members
 
-Dheeraj Khobragade 
+Dheeraj Khobragade \n
 Rahul Bhave
 Vaidehi Dilip Choudhari
 Aayush Awari
