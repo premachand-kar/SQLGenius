@@ -15,6 +15,7 @@ import re
 import sqlparse
 from sqlalchemy import create_engine, text
 from sqlalchemy import inspect
+from sqlalchemy.exc import SQLAlchemyError
 from agno.agent import Agent
 from groq import Groq
  
@@ -90,8 +91,25 @@ class SQLRunnerAgent(Agent):
             with engine.connect() as conn:
                 df = pd.read_sql_query(text(query), conn)
             return df
+        except SQLAlchemyError as e:
+            st.markdown("Database error occurred",e)
+            
         except Exception as e:
-            return f"Error running query: {str(e)}"
+            st.markdown("Unexpected error occurred",e)
+            
+
+        # except Exception as e:
+        #     return f"Error running query: {str(e)}"
+        
+
+        
+# except SQLAlchemyError as e:
+#         logging.error("Database error occurred", exc_info=True)
+#         raise RuntimeError("A database error occurred while running the query.") from e
+#     except Exception as e:
+#         logging.error("Unexpected error occurred", exc_info=True)
+#         raise RuntimeError("An unexpected error occurred while running the query.") from e
+
  
 # ----------- Streamlit UI -----------
 st.set_page_config(page_title="Agentic SQL App", layout="centered")
@@ -100,21 +118,21 @@ st.set_page_config(page_title="Agentic SQL App", layout="centered")
 st.markdown("🧠 SQLGenius powered by @ <a href='https://www.groq.com/' target='_blank'>Groq</a> + <a href='https://www.agno.com/' target='_blank'>Agno</a>", unsafe_allow_html=True)
  
 st.info("This app uses Groq API for SQL generation. Please enter your API key below.")
-st.subheader("🔐 GROQ API Setup")
+st.sidebar.subheader("🔐 GROQ API Setup")
 st.session_state.setdefault("groq_api_key", "")
-st.text_input("Enter your GROQ API Key", type="password", key="groq_api_key")
+st.sidebar.text_input("Enter your GROQ API Key", type="password", key="groq_api_key")
 st.session_state["selected_model"] = "llama3-8b-8192"
-st.info("Using preselected model: llama3-8b-8192")
+st.sidebar.info("Using preselected model: llama3-8b-8192")
  
-st.subheader("🗄️ Database Configuration")
-db_type = st.selectbox("Select Database Type", ["SQLite", "PostgreSQL", "MySQL"])
+st.sidebar.subheader("🗄️ Database Configuration")
+db_type = st.sidebar.selectbox("Select Database Type", ["SQLite", "PostgreSQL", "MySQL"])
 st.session_state.db_type = db_type
  
 db_config = {}
 if db_type == "SQLite":
     st.info("SQLite uses a local file `sample.db`.")
-    uploaded_file = st.file_uploader("📤 Upload SQL file to setup database", type=["sql"])
-    if uploaded_file and st.button("⚙️ Run SQL File to Setup DB"):
+    uploaded_file = st.sidebar.file_uploader("📤 Upload SQL file to setup database", type=["sql"])
+    if uploaded_file and st.sidebar.button("⚙️ Run SQL File to Setup DB"):
         try:
             sql_script = uploaded_file.read().decode("utf-8")
             with sqlite3.connect("sample.db") as conn:
@@ -176,6 +194,6 @@ if "generated_sql" in st.session_state:
             if isinstance(result, pd.DataFrame):
                 st.success("✅ Query executed successfully.")
                 st.subheader("📊 SQL Query Result")
-                st.dataframe(result)
+                st.dataframe(result,hide_index=True)
             else:
                 st.error(result)
