@@ -17,8 +17,6 @@ SQLGenius is a Streamlit application designed to help non-technical businesses a
 - **SQL Generation**: Generate SQL queries based on natural language input.
 - **Query Execution**: Execute SQL queries and display results in a data frame.
 
-![image](https://github.com/user-attachments/assets/fa3f9e51-742e-4861-ad56-c032242ea470)
- 
 ## Installation
  
 1. Clone the repository:
