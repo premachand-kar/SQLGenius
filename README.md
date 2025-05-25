@@ -6,9 +6,18 @@ Non-technical businesses face challenges in accessing and analyzing critical dat
  
 ## Solution:
  
-SQLGenius is a Streamlit application designed to help non-technical businesses access and analyze critical data without needing SQL knowledge. The app leverages opensource technologies Groq Cloud for LLM hosting, as well as Agno AI agent framework for  Database Connection, SQL Query generation, as well as SQL Query execution and provides a user-friendly interface to interact with databases.
+SQLGenius is a Streamlit application designed to help non-technical businesses access and analyze critical data without needing SQL knowledge. The app leverages opensource technologies IBM WATSONX/Groq API for LLM hosting, as well as Agno AI agent framework for  Database Connection, SQL Query generation, as well as SQL Query execution and provides a user-friendly interface to interact with databases.
+
+##IBM WATSONX
+
+![image](https://github.com/user-attachments/assets/6234e2ff-85c3-4029-961c-08496ae36efc)
+
+
+##GROQ
 
 ![image](https://github.com/user-attachments/assets/59b74980-b82f-40ed-afc5-ad8229738c91)
+
+
 
 ## Features
  
@@ -37,10 +46,14 @@ SQLGenius is a Streamlit application designed to help non-technical businesses a
  
 ## Usage
  
-1. **API Setup**:
-    - Enter your Groq API key in the provided input field.
-    - Select the preselected model: `llama3-8b-8192`.
- 
+1. **API Setup for IBM WATSONX.AI**:
+    - Enter your watsonx API key,project id and watsonx.ai cloud url in the provided input field.
+    - Select the preselected model: `ibm/granite-3-3-8b-instruc`.
+  OR
+    
+    **API Setup for GROQ**:
+     - Enter your Groq API key in the provided input field.
+     - Select the preselected model: `llama3-8b-8192`.
 2. **Database Configuration**:
     - Select the database type (SQLite, PostgreSQL, MySQL).
     - For SQLite, upload a SQL file to set up the database.
